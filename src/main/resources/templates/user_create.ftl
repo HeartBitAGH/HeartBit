@@ -31,10 +31,11 @@
     </div>
     <div>
         <label for="role">Role</label>
-        <select name="role" id="role" required>
-            <option <#if form.role == 'USER'>selected</#if>>USER</option>
-            <option <#if form.role == 'ADMIN'>selected</#if>>ADMIN</option>
-        </select>
+        <#--todo: rapair it -->
+        <#--<select name="role" id="role" required>-->
+            <#--<option <#if form.role == 'USER'>selected</#if>>USER</option>-->
+            <#--<option <#if form.role == 'ADMIN'>selected</#if>>ADMIN</option>-->
+        <#--</select>-->
     </div>
     <button type="submit">Save</button>
 </form>

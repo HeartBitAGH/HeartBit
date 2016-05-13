@@ -13,7 +13,10 @@
 
 <h1>Log in</h1>
 
-<p>You can use: demo@localhost / demo</p>
+<p>USE:</p>
+<p>admin@heartbit / demo</p>
+<p>gp@heartbit / demo</p>
+<p>cardio@heartbit / demo</p>
 
 <form role="form" action="/login" method="post">
     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
