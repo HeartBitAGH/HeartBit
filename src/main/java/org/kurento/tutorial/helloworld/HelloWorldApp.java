@@ -33,19 +33,27 @@ import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry
 @EnableWebSocket
 public class HelloWorldApp implements WebSocketConfigurer {
 
+
+  final static String DEFAULT_KMS_WS_URI = "ws://localhost:8888/kurento";
+
   @Bean
-  public HelloWorldHandler handler() {
-    return new HelloWorldHandler();
+  public CallHandler callHandler() {
+    return new CallHandler();
+  }
+
+  @Bean
+  public UserRegistry registry() {
+    return new UserRegistry();
   }
 
   @Bean
   public KurentoClient kurentoClient() {
-    return KurentoClient.create();
+    return KurentoClient.create(System.getProperty("kms.url",
+            DEFAULT_KMS_WS_URI));
   }
 
-  @Override
   public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
-    registry.addHandler(handler(), "/helloworld");
+    registry.addHandler(callHandler(), "/call");
   }
 
   public static void main(String[] args) throws Exception {
