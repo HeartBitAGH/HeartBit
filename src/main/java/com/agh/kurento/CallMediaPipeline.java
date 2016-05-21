@@ -1,4 +1,4 @@
-package org.kurento.tutorial.helloworld;
+package com.agh.kurento;
 
 import org.kurento.client.KurentoClient;
 import org.kurento.client.MediaPipeline;

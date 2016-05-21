@@ -1,4 +1,4 @@
-package org.kurento.tutorial.helloworld;
+package com.agh.kurento;
 
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
@@ -26,7 +26,7 @@ public class CallHandler extends TextWebSocketHandler {
     private static final Logger log = LoggerFactory.getLogger(CallHandler.class);
     private static final Gson gson = new GsonBuilder().create();
 
-    private final ConcurrentHashMap<String, CallMediaPipeline> pipelines = new ConcurrentHashMap<String, CallMediaPipeline>();
+    private final ConcurrentHashMap<String, CallMediaPipeline> pipelines = new ConcurrentHashMap<>();
 
     @Autowired
     private KurentoClient kurento;

@@ -87,13 +87,6 @@
             <version>2.1.0</version>
         </dependency>
 
-        <!--<dependency>-->
-            <!--<groupId>org.webjars.bower</groupId>-->
-            <!--<artifactId>adapter.js</artifactId>-->
-            <!--<version>0.2.9</version>-->
-        <!--</dependency>-->
-
-
 		</dependencies>
 
 	<build>
