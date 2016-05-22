@@ -2,14 +2,15 @@
 <@c.page title="Home">
 <ul>
     <#if !currentUser??>
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-xs-12">
                     <img src="/images/logo.jpg" class="img-responsive"/>
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container-fluid">
+            <div class="row"><br><br></div>
             <div class="row">
                 <div class="col-xs-12">
                     <a href="/login">Log in</a>
