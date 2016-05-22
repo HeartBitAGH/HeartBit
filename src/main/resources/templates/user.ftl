@@ -1,3 +1,4 @@
+<#import "base.ftl" as c/>
 <!DOCTYPE html>
 <html lang="en">
 <head>

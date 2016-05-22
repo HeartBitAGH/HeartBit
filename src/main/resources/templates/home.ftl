@@ -1,29 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Home page</title>
-</head>
-<body>
-<nav role="navigation">
-    <ul>
+<#import "base.ftl" as c/>
+<@c.page title="Home">
+<ul>
     <#if !currentUser??>
-        <li><a href="/login">Log in</a></li>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <img src="/images/logo.jpg" class="img-responsive"/>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <a href="/login">Log in</a>
+                </div>
+            </div>
+        </div>
+
     </#if>
     <#if currentUser??>
-        <li>
+
             <form action="/logout" method="post">
-                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                <button type="submit">Log out</button>
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+            <button type="submit">Log out</button>
             </form>
-        </li>
-        <li><a href="/user/${currentUser.id}">View myself</a></li>
+
+        <a href="/user/${currentUser.id}">View myself</a>
     </#if>
-    <#if currentUser?? && currentUser.role == "ADMIN">
-        <li><a href="/user/create">Create a new user</a></li>
-        <li><a href="/users">View all users</a></li>
-    </#if>
-    </ul>
-</nav>
-</body>
-</html>
+    <#--<#if currentUser?? && currentUser.role == "ADMIN">-->
+        <#--<li><a href="/user/create">Create a new user</a></li>-->
+        <#--<li><a href="/users">View all users</a></li>-->
+    <#--</#if>-->
+</ul>
+</@c.page>

@@ -2,18 +2,18 @@ package com.agh;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.context.web.SpringBootServletInitializer;
+import org.springframework.context.annotation.Configuration;
 
 @SpringBootApplication
-public class HeartbitApplication extends SpringBootServletInitializer {
+@Configuration
+public class HeartbitApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(HeartbitApplication.class, args);
 	}
 
-	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(HeartbitApplication.class);
-	}
+//	@Override
+//	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+//		return application.sources(HeartbitApplication.class);
+//	}
 }
