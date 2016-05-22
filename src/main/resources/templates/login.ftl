@@ -1,3 +1,5 @@
+<#import "base.ftl" as c/>
+<@c.page title="Login">
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,35 +7,43 @@
     <title>Log in</title>
 </head>
 <body>
-<nav role="navigation">
-    <ul>
-        <li><a href="/">Home</a></li>
-    </ul>
-</nav>
+<#--<h1>Log in</h1>-->
 
-<h1>Log in</h1>
-
-<p>USE:</p>
+<p>Demo accounts:</p>
 <p>admin@heartbit / demo</p>
 <p>gp@heartbit / demo</p>
 <p>cardio@heartbit / demo</p>
 
-<form role="form" action="/login" method="post">
-    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+<form role="form" action="/login" method="post" class="form-horizontal">
+    <fieldset>
+        <legend>Log in</legend>
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
-    <div>
-        <label for="email">Email address</label>
-        <input type="email" name="email" id="email" required autofocus/>
-    </div>
-    <div>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" required/>
-    </div>
-    <div>
-        <label for="remember-me">Remember me</label>
-        <input type="checkbox" name="remember-me" id="remember-me"/>
-    </div>
-    <button type="submit">Sign in</button>
+        <div class="form-group">
+                <label for="email" class="col-lg-2 control-label">Email</label>
+                <div class="col-lg-10">
+                    <input type="email" name="email" id="email" required autofocus/>
+                </div>
+        </div>
+        <div class="form-group">
+            <#--<label for="password">Password</label>-->
+                <label for="password" class="col-lg-2 control-label">Password</label>
+                <div class="col-lg-10">
+                    <input type="password" name="password" id="password" required/>
+                </div>
+        </div>
+        <#--<div>-->
+            <#--<label for="remember-me">Remember me</label>-->
+            <#--<input type="checkbox" name="remember-me" id="remember-me"/>-->
+        <#--</div>-->
+
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button type="reset" class="btn btn-default">Cancel</button>
+                <button type="submit" class="btn btn-primary">Sign in</button>
+            </div>
+        </div>
+    </fieldset>
 </form>
 
 <#if error.isPresent()>
@@ -41,3 +51,4 @@
 </#if>
 </body>
 </html>
+</@c.page>
