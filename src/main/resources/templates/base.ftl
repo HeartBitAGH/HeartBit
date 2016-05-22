@@ -5,6 +5,7 @@
     <#--<meta charset="utf-8">-->
     <title>${title?html}</title>
     <link rel="stylesheet" href="/css/bootstrap.css"/>
+
 </head>
 <body>
 <#--<nav role="navigation">-->
