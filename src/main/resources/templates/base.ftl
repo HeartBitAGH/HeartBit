@@ -12,7 +12,6 @@
     <script src="/webjars/draggabilly/2.1.0/draggabilly.pkgd.min.js"></script>
     <script src="/js/adapter.min.js"></script>
     <script src="/js/kurento-utils.min.js"></script>
-    <script src="/js/index.js"></script>
 </head>
 <body>
 <#--<nav role="navigation">-->

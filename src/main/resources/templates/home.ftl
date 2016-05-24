@@ -20,8 +20,9 @@
 
     </#if>
     <#if currentUser??>
+        <script src="/js/index.js"></script>
 
-            <form action="/logout" method="post">
+        <form action="/logout" method="post">
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <button type="submit">Log out</button>
             </form>
