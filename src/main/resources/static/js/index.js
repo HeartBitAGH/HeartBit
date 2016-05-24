@@ -56,14 +56,14 @@ function setCallState(nextState) {
 }
 window.onload = function() {
 	setRegisterState(NOT_REGISTERED);
-	var drag = new Draggabilly(document.getElementById('videoSmall'));
+	//var drag = new Draggabilly(document.getElementById('videoSmall'));
 	videoInput = document.getElementById('videoInput');
 	videoOutput = document.getElementById('videoOutput');
-	document.getElementById('name').focus();
-}
+	//document.getElementById('name').focus();
+};
 window.onbeforeunload = function() {
 	ws.close();
-}
+};
 ws.onmessage = function(message) {
 	var parsedMessage = JSON.parse(message.data);
 	console.info('Received message: ' + message.data);
@@ -93,7 +93,7 @@ ws.onmessage = function(message) {
 		default:
 			console.error('Unrecognized message', parsedMessage);
 	}
-}
+};
 function registerResponse(message) {
 	if (message.response == 'accepted') {
 		setRegisterState(REGISTERED);
@@ -148,7 +148,7 @@ function incomingCall(message) {
 			remoteVideo : videoOutput,
 			onicecandidate : onIceCandidate,
 			onerror : onError
-		}
+		};
 		webRtcPeer = new kurentoUtils.WebRtcPeer.WebRtcPeerSendrecv(options,
 			function(error) {
 				if (error) {
@@ -204,7 +204,7 @@ function call() {
 		remoteVideo : videoOutput,
 		onicecandidate : onIceCandidate,
 		onerror : onError
-	}
+	};
 	webRtcPeer = new kurentoUtils.WebRtcPeer.WebRtcPeerSendrecv(options,
 		function(error) {
 			if (error) {

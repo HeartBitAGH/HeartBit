@@ -4,18 +4,15 @@
 <head>
     <meta charset="utf-8">
     <title>${title?html}</title>
-    <link rel="stylesheet" href="/css/bootstrap.css"/>
-
-    <#--<link rel="shortcut icon" href="img/kurento.png" type="image/png" />-->
-    <#--<link rel="stylesheet" href="/webjars/ekko-lightbox/4.0.2/dist/ekko-lightbox.min.css">-->
-    <link rel="stylesheet" href="css/kurento.css">
-
-    <#--<script src="/webjars/jquery/2.2.4/jquery.min.js"></script>-->
-    <#--<script src="/webjars/ekko-lightbox/4.0.2/dist/ekko-lightbox.min.js"></script>-->
-    <#--<script src="/webjars/draggabilly/2.1.0/draggabilly.pkgd.min.js"></script>-->
-    <script src="js/adapter.min.js"></script>
-    <script src="js/kurento-utils.min.js"></script>
-    <#--<script src="js/index.js"></script>-->
+    <link rel="stylesheet" href="/webjars/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/webjars/ekko-lightbox/4.0.2/dist/ekko-lightbox.min.css">
+    <link rel="stylesheet" href="/css/kurento.css">
+    <script src="/webjars/jquery/2.2.4/jquery.min.js"></script>
+    <script src="/webjars/ekko-lightbox/4.0.2/dist/ekko-lightbox.min.js"></script>
+    <script src="/webjars/draggabilly/2.1.0/draggabilly.pkgd.min.js"></script>
+    <script src="/js/adapter.min.js"></script>
+    <script src="/js/kurento-utils.min.js"></script>
+    <script src="/js/index.js"></script>
 </head>
 <body>
 <#--<nav role="navigation">-->

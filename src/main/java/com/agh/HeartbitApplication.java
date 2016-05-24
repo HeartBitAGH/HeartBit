@@ -16,9 +16,7 @@ import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry
 public class HeartbitApplication implements WebSocketConfigurer {
 
   @Bean
-  public CallHandler callHandler() {
-    return new CallHandler();
-  }
+  public CallHandler callHandler() { return new CallHandler(); }
 
   @Bean
   public UserRegistry registry() {
@@ -33,10 +31,6 @@ public class HeartbitApplication implements WebSocketConfigurer {
   public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
     registry.addHandler(callHandler(), "/call");
   }
-
-//  public static void main(String[] args) throws Exception {
-//    new SpringApplication(HeartbitApplication.class).run(args);
-//  }
 
   public static void main(String[] args) {
     SpringApplication.run(HeartbitApplication.class, args);

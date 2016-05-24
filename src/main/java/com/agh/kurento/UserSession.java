@@ -27,12 +27,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * User session.
- *
- * @author David Fernandez (d.fernandezlop@gmail.com)
- * @since 6.0.0
- */
+
 public class UserSession {
 
   private static final Logger log = LoggerFactory.getLogger(UserSession.class);
