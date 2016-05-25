@@ -39,12 +39,15 @@
         </div>
         <div class="form-group">
             <label for="radioiinline" class="col-lg-2 control-label">Select a role in the system</label>
-            <div class="col-lg-10 col-lg-offset-2">
+            <div class="col-lg-10 ">
                 <label class="radio-inline">
                     <input type="radio" name="role" id="role" value="GPDOCTOR">GPDOCTOR
                 </label>
                 <label class="radio-inline">
                     <input type="radio" name="role" id="role" value="CARDIOLOGIST">CARDIOLOGIST
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="role" id="role" value="ADMIN">ADMIN
                 </label>
             </div>
         </div>
