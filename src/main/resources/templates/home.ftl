@@ -63,12 +63,10 @@
             </div>
             <div class="col-md-7">
                 <div id="videoBig">
-                    <video id="videoOutput" autoplay width="640px" height="480px"
-                           poster="img/webrtc.png"></video>
+                    <video id="videoOutput" autoplay width="640px" height="480px"></video>
                 </div>
                 <div id="videoSmall">
-                    <video id="videoInput" autoplay width="240px" height="180px"
-                           poster="img/webrtc.png"></video>
+                    <video id="videoInput" autoplay width="240px" height="180px"></video>
                 </div>
             </div>
             <br />
