@@ -1,5 +1,6 @@
-<#import "base.ftl" as c/>
 <#import "/spring.ftl" as spring>
+<#import "base.ftl" as c/>
+<@c.page title="Create new user">
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,32 +14,48 @@
     </ul>
 </nav>
 
-<h1>Create a new user</h1>
+<form role="form" action="" method="post" class="form-horizontal">
+    <fieldset>
+        <legend>Create new user</legend>
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
-<form role="form" name="form" action="" method="post">
-    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        <div class="form-group">
+            <label for="email" class="col-lg-2 control-label">Email</label>
+            <div class="col-lg-10">
+                <input type="email" name="email" id="email" value="${form.email}" required autofocus/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-lg-2 control-label">Password</label>
+            <div class="col-lg-10">
+                <input type="password" name="password" id="password" required/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-lg-2 control-label">Repeat password</label>
+            <div class="col-lg-10">
+                <input type="password" name="passwordRepeated" id="passwordRepeated" required/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="radioiinline" class="col-lg-2 control-label">Select a role in the system</label>
+            <div class="col-lg-10 col-lg-offset-2">
+                <label class="radio-inline">
+                    <input type="radio" name="role" id="role" value="GPDOCTOR">GPDOCTOR
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="role" id="role" value="CARDIOLOGIST">CARDIOLOGIST
+                </label>
+            </div>
+        </div>
 
-    <div>
-        <label for="email">Email address</label>
-        <input type="email" name="email" id="email" value="${form.email}" required autofocus/>
-    </div>
-    <div>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" required/>
-    </div>
-    <div>
-        <label for="passwordRepeated">Repeat</label>
-        <input type="password" name="passwordRepeated" id="passwordRepeated" required/>
-    </div>
-    <div>
-        <label for="role">Role</label>
-        <#--todo: rapair it -->
-        <#--<select name="role" id="role" required>-->
-            <#--<option <#if form.role == 'USER'>selected</#if>>USER</option>-->
-            <#--<option <#if form.role == 'ADMIN'>selected</#if>>ADMIN</option>-->
-        <#--</select>-->
-    </div>
-    <button type="submit">Save</button>
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button type="reset" class="btn btn-default">Cancel</button>
+                <button type="submit" class="btn btn-primary">Create</button>
+            </div>
+        </div>
+    </fieldset>
 </form>
 
 <@spring.bind "form" />
@@ -52,3 +69,4 @@
 
 </body>
 </html>
+</@c.page>
