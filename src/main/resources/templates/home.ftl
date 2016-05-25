@@ -74,9 +74,11 @@
             <br />
         </div>
     </#if>
-    <#--<#if currentUser?? && currentUser.role == "ADMIN">-->
-        <#--<li><a href="/user/create">Create a new user</a></li>-->
-        <#--<li><a href="/users">View all users</a></li>-->
-    <#--</#if>-->
+    <#if currentUser?? && currentUser.role == "ADMIN">
+    <br>
+        <a href="/user/create">Create a new user</a>
+    <br>
+        <a href="/users">View all users</a>
+    </#if>
 </ul>
 </@c.page>
