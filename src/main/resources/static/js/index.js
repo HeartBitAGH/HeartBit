@@ -59,10 +59,11 @@ window.onload = function() {
 	var drag = new Draggabilly(document.getElementById('videoSmall'));
 	videoInput = document.getElementById('videoInput');
 	videoOutput = document.getElementById('videoOutput');
-	document.getElementById('name').focus();
+	waitForSocketConnection(ws, register);
 };
 window.onbeforeunload = function() {
 	ws.close();
+	console.log("closing");
 };
 ws.onmessage = function(message) {
 	var parsedMessage = JSON.parse(message.data);
@@ -179,7 +180,7 @@ function onOfferIncomingCall(error, offerSdp) {
 	sendMessage(response);
 }
 function register() {
-	var name = document.getElementById('name').value;
+	var name = document.getElementById('name').textContent;
 	if (name == '') {
 		window.alert('You must insert your user name');
 		return;
@@ -219,7 +220,7 @@ function onOfferCall(error, offerSdp) {
 	console.log('Invoking SDP offer callback function');
 	var message = {
 		id : 'call',
-		from : document.getElementById('name').value,
+		from : document.getElementById('name').textContent,
 		to : document.getElementById('peer').value,
 		sdpOffer : offerSdp
 	};
@@ -257,14 +258,14 @@ function sendMessage(message) {
 }
 function showSpinner() {
 	for (var i = 0; i < arguments.length; i++) {
-		arguments[i].poster = './img/transparent-1px.png';
+		//arguments[i].poster = './img/transparent-1px.png';
 		arguments[i].style.background = 'center transparent url("./img/spinner.gif") no-repeat';
 	}
 }
 function hideSpinner() {
 	for (var i = 0; i < arguments.length; i++) {
 		arguments[i].src = '';
-		arguments[i].poster = './img/webrtc.png';
+		//arguments[i].poster = './img/webrtc.png';
 		arguments[i].style.background = '';
 	}
 }
@@ -275,4 +276,22 @@ function disableButton(id) {
 function enableButton(id, functionName) {
 	$(id).attr('disabled', false);
 	$(id).attr('onclick', functionName);
+}
+
+function waitForSocketConnection(socket, callback){
+	setTimeout(
+		function () {
+			if (socket.readyState === 1) {
+				console.log("Connection is made")
+				if(callback != null){
+					callback();
+				}
+				return;
+
+			} else {
+				console.log("wait for connection...")
+				waitForSocketConnection(socket, callback);
+			}
+
+		}, 5); // wait 5 milisecond for the connection...
 }
