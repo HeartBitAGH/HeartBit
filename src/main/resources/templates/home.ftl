@@ -21,13 +21,12 @@
                     <label class="control-label" for="name">Name</label>
                     <div class="row">
                         <div class="col-md-6">
-                            <input id="name" name="name" class="form-control" type="text"
-                                   onkeydown="if (event.keyCode == 13) register();" />
+                            <p id="name">${currentUser.user.email}</p>
                         </div>
-                        <div class="col-md-6 text-right">
-                            <a id="register" href="#" class="btn btn-primary"><span
-                                    class="glyphicon glyphicon-plus"></span> Register</a>
-                        </div>
+                        <#--<div class="col-md-6 text-right">-->
+                            <#--<a id="register" href="#" class="btn btn-primary"><span-->
+                                    <#--class="glyphicon glyphicon-plus"></span> Register</a>-->
+                        <#--</div>-->
                     </div>
                     <br /> <br /> <label class="control-label" for="peer">Peer</label>
                     <div class="row">
