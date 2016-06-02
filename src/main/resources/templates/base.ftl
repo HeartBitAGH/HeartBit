@@ -14,26 +14,6 @@
     <script src="/js/kurento-utils.min.js"></script>
 </head>
 <body>
-<#--<nav role="navigation">-->
-    <#--<ul>-->
-    <#--<#if !currentUser??>-->
-        <#--<li><a href="/login">Log in</a></li>-->
-    <#--</#if>-->
-    <#--<#if currentUser??>-->
-        <#--<li>-->
-            <#--<form action="/logout" method="post">-->
-                <#--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>-->
-                <#--<button type="submit">Log out</button>-->
-            <#--</form>-->
-        <#--</li>-->
-        <#--<li><a href="/user/${currentUser.id}">View myself</a></li>-->
-    <#--</#if>-->
-    <#--<#if currentUser?? && currentUser.role == "ADMIN">-->
-        <#--<li><a href="/user/create">Create a new user</a></li>-->
-        <#--<li><a href="/users">View all users</a></li>-->
-    <#--</#if>-->
-    <#--</ul>-->
-<#--</nav>-->
 
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -46,7 +26,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                 <ul class="nav navbar-nav">
                     <#if currentUser??>
-                    <li><a href="/user/${currentUser.id}">Viev myself</a></li>
+                    <li><a href="/user/${currentUser.id}">View myself</a></li>
                     </#if>
 
                     <#if currentUser?? && currentUser.role == "ADMIN">
@@ -73,7 +53,6 @@
     <!-- header section -->
     <div class="container">
         <div class="row">
-            <#--<div class="col-lg-10 col-lg-offset-1 main-container">-->
             <div class="main-container">
                 <#nested/>
             </div>
