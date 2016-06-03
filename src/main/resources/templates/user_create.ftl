@@ -8,11 +8,6 @@
     <title>Create a new user</title>
 </head>
 <body>
-<nav role="navigation">
-    <ul>
-        <li><a href="/">Home</a></li>
-    </ul>
-</nav>
 
 <form role="form" action="" method="post" class="form-horizontal">
     <fieldset>

@@ -1,4 +1,5 @@
 <#import "base.ftl" as c/>
+<@c.page title="User">
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,16 +7,13 @@
     <title>User details</title>
 </head>
 <body>
-<nav role="navigation">
-    <ul>
-        <li><a href="/">Home</a></li>
-    </ul>
-</nav>
 
-<h1>User details</h1>
+    <h1>User details</h1>
 
-<p>E-mail: ${user.email}</p>
+    <p>E-mail: ${user.email}</p>
 
-<p>Role: ${user.role}</p>
+    <p>Role: ${user.role}</p>
+
 </body>
 </html>
+</@c.page>
